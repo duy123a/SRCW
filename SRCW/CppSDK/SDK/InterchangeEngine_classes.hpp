@@ -19,8 +19,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InterchangeEngine.InterchangeBlueprintPipelineBase
 // 0x0000 (0x00A8 - 0x00A8)
@@ -338,5 +337,4 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeMeshUtilities;
 
-}
-
+SDK_NAMESPACE_END

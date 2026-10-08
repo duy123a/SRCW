@@ -14,8 +14,7 @@
 #include "RedpointEOSAuth_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RedpointEOSAuth.EOSUserInterface_EnterDevicePinCode.SetupUserInterface
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -114,5 +113,5 @@ void UEOSUserInterface_SignInOrCreateAccount_Context::SelectChoice(EEOSUserInter
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

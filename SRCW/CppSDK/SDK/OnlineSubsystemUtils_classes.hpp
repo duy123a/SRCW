@@ -18,8 +18,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class OnlineSubsystemUtils.AchievementBlueprintLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -185,29 +184,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDestroySessionCallbackProxy;
-
-// Class OnlineSubsystemUtils.OnlineEngineInterfaceImpl
-// 0x0158 (0x0180 - 0x0028)
-class UOnlineEngineInterfaceImpl final : public UOnlineEngineInterface
-{
-public:
-	uint8                                         Pad_28[0x158];                                     // 0x0028(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OnlineEngineInterfaceImpl")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OnlineEngineInterfaceImpl")
-	}
-	static class UOnlineEngineInterfaceImpl* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOnlineEngineInterfaceImpl>();
-	}
-};
-DUMPER7_ASSERTS_UOnlineEngineInterfaceImpl;
 
 // Class OnlineSubsystemUtils.EndMatchCallbackProxy
 // 0x0050 (0x0080 - 0x0030)
@@ -1254,5 +1230,27 @@ public:
 };
 DUMPER7_ASSERTS_UVoipListenerSynthComponent;
 
-}
+// Class OnlineSubsystemUtils.OnlineEngineInterfaceImpl
+// 0x0158 (0x0180 - 0x0028)
+class UOnlineEngineInterfaceImpl final : public UOnlineEngineInterface
+{
+public:
+	uint8                                         Pad_28[0x158];                                     // 0x0028(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OnlineEngineInterfaceImpl")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OnlineEngineInterfaceImpl")
+	}
+	static class UOnlineEngineInterfaceImpl* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOnlineEngineInterfaceImpl>();
+	}
+};
+DUMPER7_ASSERTS_UOnlineEngineInterfaceImpl;
+
+SDK_NAMESPACE_END

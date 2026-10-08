@@ -14,8 +14,8 @@
 #include "RigVM_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function RigVM.RigVM.AddRigVMFunction
 // 0x0018 (0x0018 - 0x0000)
@@ -577,5 +577,5 @@ public:
 };
 DUMPER7_ASSERTS_RigVMHost_SupportsEvent;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

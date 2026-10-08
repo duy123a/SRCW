@@ -17,8 +17,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class RigVM.RigVMGraphFunctionHost
 // 0x0000 (0x0000 - 0x0000)
@@ -371,5 +370,4 @@ public:
 };
 DUMPER7_ASSERTS_URigVMEditorSettings;
 
-}
-
+SDK_NAMESPACE_END

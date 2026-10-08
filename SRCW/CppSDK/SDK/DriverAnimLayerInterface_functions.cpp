@@ -14,8 +14,7 @@
 #include "DriverAnimLayerInterface_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DriverAnimLayerInterface.DriverAnimLayerInterface_C.HoverboardControlRogLayer
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -228,5 +227,5 @@ void IDriverAnimLayerInterface_C::ScaleFaceLayer(const struct FPoseLink& InFaceO
 		*ScaleFaceLayer_0 = std::move(Parms.ScaleFaceLayer_0);
 }
 
-}
 
+SDK_NAMESPACE_END

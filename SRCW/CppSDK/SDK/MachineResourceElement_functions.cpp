@@ -14,8 +14,7 @@
 #include "MachineResourceElement_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MachineResourceElement.MachineResourceElement_C.ExecuteUbergraph_MachineResourceElement
 // (Final, UbergraphFunction, HasDefaults)
@@ -168,5 +167,5 @@ void UMachineResourceElement_C::OnUnloadResource()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

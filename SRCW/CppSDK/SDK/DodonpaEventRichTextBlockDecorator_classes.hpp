@@ -13,8 +13,7 @@
 #include "UnionUI_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DodonpaEventRichTextBlockDecorator.DodonpaEventRichTextBlockDecorator_C
 // 0x0000 (0x0440 - 0x0440)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDodonpaEventRichTextBlockDecorator_C;
 
-}
-
+SDK_NAMESPACE_END

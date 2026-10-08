@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AnimToTexture.EAnimToTextureMode
 // NumValues: 0x0004
@@ -34,6 +33,28 @@ enum class EAnimToTextureBonePrecision : uint8
 	SixteenBits                              = 1,
 	EAnimToTextureBonePrecision_MAX          = 2,
 };
+
+// ScriptStruct AnimToTexture.AnimToTextureAnimState
+// 0x0014 (0x0014 - 0x0000)
+struct FAnimToTextureAnimState final
+{
+public:
+	float                                         StartFrame;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NumFrames;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PlayRate;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         bLooping;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GlobalStartTime;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAnimToTextureAnimState;
+
+// ScriptStruct AnimToTexture.AnimToTextureInstancePlaybackData
+// 0x0014 (0x0014 - 0x0000)
+struct FAnimToTextureInstancePlaybackData final
+{
+public:
+	struct FAnimToTextureAnimState                CurrentState;                                      // 0x0000(0x0014)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAnimToTextureInstancePlaybackData;
 
 // ScriptStruct AnimToTexture.AnimToTextureMiniAnimState
 // 0x000C (0x000C - 0x0000)
@@ -97,28 +118,6 @@ public:
 };
 DUMPER7_ASSERTS_FAnimInfo;
 
-// ScriptStruct AnimToTexture.AnimToTextureAnimState
-// 0x0014 (0x0014 - 0x0000)
-struct FAnimToTextureAnimState final
-{
-public:
-	float                                         StartFrame;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NumFrames;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PlayRate;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         bLooping;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GlobalStartTime;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAnimToTextureAnimState;
-
-// ScriptStruct AnimToTexture.AnimToTextureInstancePlaybackData
-// 0x0014 (0x0014 - 0x0000)
-struct FAnimToTextureInstancePlaybackData final
-{
-public:
-	struct FAnimToTextureAnimState                CurrentState;                                      // 0x0000(0x0014)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAnimToTextureInstancePlaybackData;
-
 // ScriptStruct AnimToTexture.AnimToTextureAnimationSyncData
 // 0x0004 (0x0004 - 0x0000)
 struct alignas(0x04) FAnimToTextureAnimationSyncData final
@@ -138,5 +137,4 @@ public:
 };
 DUMPER7_ASSERTS_FAnimToTextureInstanceData;
 
-}
-
+SDK_NAMESPACE_END

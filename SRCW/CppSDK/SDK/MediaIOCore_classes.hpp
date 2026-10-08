@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "ImageWriteQueue_structs.hpp"
 #include "MediaIOCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "OpenColorIO_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MediaAssets_classes.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
+#include "ImageWriteQueue_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MediaIOCore.CaptureCardMediaSource
 // 0x00B0 (0x0150 - 0x00A0)
@@ -282,5 +281,4 @@ public:
 };
 DUMPER7_ASSERTS_UMediaIOCoreSubsystem;
 
-}
-
+SDK_NAMESPACE_END

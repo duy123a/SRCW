@@ -14,8 +14,7 @@
 #include "UMG_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UMG.Widget.ForceLayoutPrepass
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -20108,5 +20107,5 @@ class UWrapBoxSlot* UWidgetLayoutLibrary::SlotAsWrapBoxSlot(class UWidget* Widge
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

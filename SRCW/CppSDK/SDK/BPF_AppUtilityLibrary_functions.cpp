@@ -14,8 +14,7 @@
 #include "BPF_AppUtilityLibrary_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BPF_AppUtilityLibrary.BPF_AppUtilityLibrary_C.OpenRewardDialog
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -74,5 +73,5 @@ void UBPF_AppUtilityLibrary_C::Set_Input_Blocked(class APlayerController* Contro
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

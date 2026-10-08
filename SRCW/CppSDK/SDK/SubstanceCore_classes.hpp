@@ -17,8 +17,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SubstanceCore.SubstanceGraphInstance
 // 0x0170 (0x0198 - 0x0028)
@@ -240,5 +239,4 @@ public:
 };
 DUMPER7_ASSERTS_USubstanceUtility;
 
-}
-
+SDK_NAMESPACE_END

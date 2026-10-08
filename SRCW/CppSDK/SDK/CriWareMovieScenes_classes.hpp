@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "CriWareRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MovieSceneTracks_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "MovieSceneTracks_structs.hpp"
-#include "CriWareRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CriWareMovieScenes.MovieSceneAtomSection
 // 0x03A8 (0x0498 - 0x00F0)
@@ -145,5 +144,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneManaTrack;
 
-}
-
+SDK_NAMESPACE_END

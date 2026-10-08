@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AnimationCore.EConstraintType
 // NumValues: 0x0003
@@ -100,17 +99,6 @@ public:
 	struct FNodeHierarchyData                     Hierarchy;                                         // 0x0008(0x0070)(Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FNodeHierarchyWithUserData;
-
-// ScriptStruct AnimationCore.EulerTransform
-// 0x0048 (0x0048 - 0x0000)
-struct FEulerTransform final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Scale;                                             // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FEulerTransform;
 
 // ScriptStruct AnimationCore.CCDIKChainLink
 // 0x00E0 (0x00E0 - 0x0000)
@@ -245,6 +233,17 @@ public:
 };
 DUMPER7_ASSERTS_FConstraintData;
 
+// ScriptStruct AnimationCore.EulerTransform
+// 0x0048 (0x0048 - 0x0000)
+struct FEulerTransform final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Scale;                                             // 0x0030(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FEulerTransform;
+
 // ScriptStruct AnimationCore.FABRIKChainLink
 // 0x0050 (0x0050 - 0x0000)
 struct alignas(0x08) FFABRIKChainLink final
@@ -265,5 +264,4 @@ public:
 };
 DUMPER7_ASSERTS_FTransformNoScale;
 
-}
-
+SDK_NAMESPACE_END

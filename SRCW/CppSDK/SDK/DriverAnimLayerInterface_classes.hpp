@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass DriverAnimLayerInterface.DriverAnimLayerInterface_C
 // 0x0000 (0x0000 - 0x0000)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_IDriverAnimLayerInterface_C;
 
-}
-
+SDK_NAMESPACE_END

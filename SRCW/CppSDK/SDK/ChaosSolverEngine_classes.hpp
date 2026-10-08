@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Chaos_structs.hpp"
 #include "Engine_classes.hpp"
 #include "ChaosSolverEngine_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChaosSolverEngine.ChaosDebugDrawComponent
 // 0x0008 (0x00A8 - 0x00A0)
@@ -243,5 +242,4 @@ public:
 };
 DUMPER7_ASSERTS_UChaosSolverSettings;
 
-}
-
+SDK_NAMESPACE_END

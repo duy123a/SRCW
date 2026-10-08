@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "RedpointEOSAuth_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
 #include "CoreUObject_classes.hpp"
-#include "RedpointEOSAuth_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class RedpointEOSAuth.EOSDefaultUserInterface_EnterDevicePinCode
 // 0x04F0 (0x07D0 - 0x02E0)
@@ -189,5 +188,4 @@ public:
 };
 DUMPER7_ASSERTS_UEOSUserInterface_SignInOrCreateAccount_Context;
 
-}
-
+SDK_NAMESPACE_END

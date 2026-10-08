@@ -16,8 +16,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieScene.MovieSceneBlenderSystemSupport
 // 0x0000 (0x0000 - 0x0000)
@@ -1980,5 +1979,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneSpawnTrack;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "RigVM_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RigVM.RigVM.AddRigVMFunction
 // (Native, Public, HasOutParams)
@@ -1499,5 +1498,5 @@ bool URigVMHost::SupportsEvent(const class FName& InEventName) const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

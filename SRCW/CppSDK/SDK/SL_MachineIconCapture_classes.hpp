@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "UnionRun_structs.hpp"
 #include "UnionSystem_structs.hpp"
 #include "UNION_classes.hpp"
 #include "Engine_structs.hpp"
+#include "UnionRun_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass SL_MachineIconCapture.SL_MachineIconCapture_C
 // 0x0028 (0x02D0 - 0x02A8)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_ASL_MachineIconCapture_C;
 
-}
-
+SDK_NAMESPACE_END

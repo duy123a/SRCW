@@ -14,8 +14,7 @@
 #include "Engine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Engine.BlueprintTypeConversions.ConvertArrayType
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams)
@@ -48434,7 +48433,7 @@ struct FLinearColor UKismetMathLibrary::RGBLinearToHSV(const struct FLinearColor
 }
 
 
-// Function Engine.KismetMathLibrary.RGBtoHSV
+// Function Engine.KismetMathLibrary.RGBToHSV
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // const struct FLinearColor&              InColor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -48443,14 +48442,14 @@ struct FLinearColor UKismetMathLibrary::RGBLinearToHSV(const struct FLinearColor
 // float*                                  V                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float*                                  A                                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKismetMathLibrary::RGBtoHSV(const struct FLinearColor& InColor, float* H, float* S, float* V, float* A)
+void UKismetMathLibrary::RGBToHSV(const struct FLinearColor& InColor, float* H, float* S, float* V, float* A)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KismetMathLibrary", "RGBtoHSV");
+		Func = StaticClass()->GetFunction("KismetMathLibrary", "RGBToHSV");
 
-	Params::KismetMathLibrary_RGBtoHSV Parms{};
+	Params::KismetMathLibrary_RGBToHSV Parms{};
 
 	Parms.InColor = std::move(InColor);
 
@@ -83674,13 +83673,13 @@ void UAudioComponent::Play(float StartTime)
 // const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UQuartzClockHandle*&              InClockHandle                                          (Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FQuartzQuantizationBoundary&     InQuantizationBoundary                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InStartTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InFadeInDuration                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InFadeVolumeLevel                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EAudioFaderCurve                        InFadeCurve                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAudioComponent::PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve)
+void UAudioComponent::PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve)
 {
 	static class UFunction* Func = nullptr;
 
@@ -123560,5 +123559,5 @@ void UWorldPartitionRuntimeLevelStreamingCell::OnLevelShown()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

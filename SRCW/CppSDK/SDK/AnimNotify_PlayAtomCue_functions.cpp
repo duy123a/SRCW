@@ -14,8 +14,7 @@
 #include "AnimNotify_PlayAtomCue_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AnimNotify_PlayAtomCue.PlayAtomCue_C.GetNotifyName
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -63,5 +62,5 @@ bool UPlayAtomCue_C::Received_Notify(class USkeletalMeshComponent* MeshComp, cla
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

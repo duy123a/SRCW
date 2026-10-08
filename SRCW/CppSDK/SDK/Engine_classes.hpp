@@ -10,10 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AudioPlatformConfiguration_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Chaos_structs.hpp"
 #include "FieldNotification_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
@@ -21,9 +20,10 @@
 #include "DeveloperSettings_classes.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "PhysicsCore_classes.hpp"
-#include "MeshDescription_classes.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "AudioExtensions_classes.hpp"
+#include "AudioPlatformConfiguration_structs.hpp"
+#include "MeshDescription_classes.hpp"
 #include "SlateCore_structs.hpp"
 #include "IrisCore_classes.hpp"
 #include "NetCore_structs.hpp"
@@ -31,8 +31,7 @@
 #include "PacketHandler_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Engine.BlueprintTypeConversions
 // 0x0000 (0x0028 - 0x0028)
@@ -1159,7 +1158,7 @@ DUMPER7_ASSERTS_ATriggerBase;
 // Class Engine.PrimitiveComponent
 // 0x02F0 (0x0520 - 0x0230)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPrimitiveComponent : public USceneComponent
+class SDK_ALIGN(0x10) UPrimitiveComponent : public USceneComponent
 {
 public:
 	uint8                                         Pad_230[0x18];                                     // 0x0230(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2225,7 +2224,7 @@ DUMPER7_ASSERTS_INavigationDataInterface;
 // Class Engine.StaticMeshComponent
 // 0x0090 (0x05E0 - 0x0550)
 #pragma pack(push, 0x1)
-class alignas(0x10) UStaticMeshComponent : public UMeshComponent
+class SDK_ALIGN(0x10) UStaticMeshComponent : public UMeshComponent
 {
 public:
 	int32                                         ForcedLodModel;                                    // 0x0550(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4332,7 +4331,7 @@ DUMPER7_ASSERTS_UMaterialInstanceEditorOnlyData;
 // Class Engine.LevelStreaming
 // 0x0178 (0x01A0 - 0x0028)
 #pragma pack(push, 0x1)
-class alignas(0x10) ULevelStreaming : public UObject
+class SDK_ALIGN(0x10) ULevelStreaming : public UObject
 {
 public:
 	TSoftObjectPtr<class UWorld>                  WorldAsset;                                        // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -5217,7 +5216,7 @@ DUMPER7_ASSERTS_UEdGraph;
 // Class Engine.DebugDrawComponent
 // 0x0050 (0x0570 - 0x0520)
 #pragma pack(push, 0x1)
-class alignas(0x10) UDebugDrawComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UDebugDrawComponent : public UPrimitiveComponent
 {
 public:
 	uint8                                         Pad_518[0x50];                                     // 0x0518(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -5526,7 +5525,7 @@ DUMPER7_ASSERTS_UMaterialExpressionHairAttributes;
 // Class Engine.SkeletalMeshComponent
 // 0x06B0 (0x0F70 - 0x08C0)
 #pragma pack(push, 0x1)
-class alignas(0x10) USkeletalMeshComponent : public USkinnedMeshComponent
+class SDK_ALIGN(0x10) USkeletalMeshComponent : public USkinnedMeshComponent
 {
 public:
 	TSubclassOf<class UObject>                    AnimBlueprintGeneratedClass;                       // 0x08C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
@@ -6938,7 +6937,7 @@ DUMPER7_ASSERTS_UAnimSequenceBase;
 // Class Engine.LightComponentBase
 // 0x0040 (0x0270 - 0x0230)
 #pragma pack(push, 0x1)
-class alignas(0x10) ULightComponentBase : public USceneComponent
+class SDK_ALIGN(0x10) ULightComponentBase : public USceneComponent
 {
 public:
 	struct FGuid                                  LightGuid;                                         // 0x0230(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7125,7 +7124,7 @@ DUMPER7_ASSERTS_ULocalLightComponent;
 // Class Engine.PointLightComponent
 // 0x0020 (0x03B0 - 0x0390)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPointLightComponent : public ULocalLightComponent
+class SDK_ALIGN(0x10) UPointLightComponent : public ULocalLightComponent
 {
 public:
 	uint8                                         bUseInverseSquaredFalloff : 1;                     // 0x0390(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -8607,7 +8606,7 @@ public:
 	static void ResetRandomStream(const struct FRandomStream& Stream);
 	static void ResetVectorSpringState(struct FVectorSpringState& SpringState);
 	static struct FLinearColor RGBLinearToHSV(const struct FLinearColor& RGB);
-	static void RGBtoHSV(const struct FLinearColor& InColor, float* H, float* S, float* V, float* A);
+	static void RGBToHSV(const struct FLinearColor& InColor, float* H, float* S, float* V, float* A);
 	static void RGBToHSV_Vector(const struct FLinearColor& RGB, struct FLinearColor* HSV);
 	static struct FRotator RInterpTo(const struct FRotator& Current, const struct FRotator& Target, float DeltaTime, float InterpSpeed);
 	static struct FRotator RInterpTo_Constant(const struct FRotator& Current, const struct FRotator& Target, float DeltaTime, float InterpSpeed);
@@ -8810,7 +8809,7 @@ DUMPER7_ASSERTS_ABoxReflectionCapture;
 // Class Engine.ReflectionCaptureComponent
 // 0x0070 (0x02A0 - 0x0230)
 #pragma pack(push, 0x1)
-class alignas(0x10) UReflectionCaptureComponent : public USceneComponent
+class SDK_ALIGN(0x10) UReflectionCaptureComponent : public USceneComponent
 {
 public:
 	class UBillboardComponent*                    CaptureOffsetComponent;                            // 0x0230(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
@@ -26015,7 +26014,7 @@ DUMPER7_ASSERTS_UWorldPartitionLevelStreamingPolicy;
 // Class Engine.FXSystemComponent
 // 0x0000 (0x0520 - 0x0520)
 #pragma pack(push, 0x1)
-class alignas(0x10) UFXSystemComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UFXSystemComponent : public UPrimitiveComponent
 {
 public:
 	void ReleaseToPool();
@@ -26453,7 +26452,7 @@ DUMPER7_ASSERTS_APlanarReflection;
 // Class Engine.SceneCaptureComponent
 // 0x00C0 (0x02F0 - 0x0230)
 #pragma pack(push, 0x1)
-class alignas(0x10) USceneCaptureComponent : public USceneComponent
+class SDK_ALIGN(0x10) USceneCaptureComponent : public USceneComponent
 {
 public:
 	ESceneCapturePrimitiveRenderMode              PrimitiveRenderMode;                               // 0x0230(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -30265,7 +30264,7 @@ public:
 	bool GetCookedFFTDataForAllPlayingSounds(TArray<struct FSoundWaveSpectralDataPerSound>* OutSoundWaveSpectralData);
 	TSet<class USoundModulatorBase*> GetModulators(const EModulationDestination Destination);
 	void Play(float StartTime);
-	void PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
+	void PlayQuantized(const class UObject* WorldContextObject, class UQuartzClockHandle*& InClockHandle, struct FQuartzQuantizationBoundary& InQuantizationBoundary, const TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)>& InDelegate, float InStartTime, float InFadeInDuration, float InFadeVolumeLevel, EAudioFaderCurve InFadeCurve);
 	void SetAttenuationOverrides(const struct FSoundAttenuationSettings& InAttenuationOverrides);
 	void SetAttenuationSettings(class USoundAttenuation* InAttenuationSettings);
 	void SetAudioBusSendPostEffect(class UAudioBus* AudioBus, float AudioBusSendLevel);
@@ -31358,7 +31357,7 @@ DUMPER7_ASSERTS_USplineMetadata;
 // Class Engine.SplineComponent
 // 0x0100 (0x0620 - 0x0520)
 #pragma pack(push, 0x1)
-class alignas(0x10) USplineComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) USplineComponent : public UPrimitiveComponent
 {
 public:
 	struct FSplineCurves                          SplineCurves;                                      // 0x0518(0x0070)(Edit, Net, NativeAccessSpecifierPublic)
@@ -39810,5 +39809,4 @@ public:
 };
 DUMPER7_ASSERTS_AWorldPartitionVolume;
 
-}
-
+SDK_NAMESPACE_END

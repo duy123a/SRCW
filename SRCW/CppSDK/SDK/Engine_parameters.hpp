@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Chaos_structs.hpp"
 #include "ImageCore_structs.hpp"
 #include "FieldNotification_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "TypedElementFramework_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "PhysicsCore_structs.hpp"
@@ -25,8 +25,8 @@
 #include "Slate_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Engine.BlueprintTypeConversions.ConvertArrayType
 // 0x0020 (0x0020 - 0x0000)
@@ -17637,9 +17637,9 @@ public:
 };
 DUMPER7_ASSERTS_KismetMathLibrary_RGBLinearToHSV;
 
-// Function Engine.KismetMathLibrary.RGBtoHSV
+// Function Engine.KismetMathLibrary.RGBToHSV
 // 0x0020 (0x0020 - 0x0000)
-struct KismetMathLibrary_RGBtoHSV final
+struct KismetMathLibrary_RGBToHSV final
 {
 public:
 	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -17648,7 +17648,7 @@ public:
 	float                                         V;                                                 // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         A;                                                 // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_KismetMathLibrary_RGBtoHSV;
+DUMPER7_ASSERTS_KismetMathLibrary_RGBToHSV;
 
 // Function Engine.KismetMathLibrary.RGBToHSV_Vector
 // 0x0020 (0x0020 - 0x0000)
@@ -30025,7 +30025,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UQuartzClockHandle*                     InClockHandle;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuartzQuantizationBoundary            InQuantizationBoundary;                            // 0x0010(0x0020)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)> InDelegate;           // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name_0)> InDelegate;         // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InStartTime;                                       // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFadeInDuration;                                  // 0x0044(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFadeVolumeLevel;                                 // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -44983,5 +44983,5 @@ public:
 };
 DUMPER7_ASSERTS_WorldPartitionDestructibleInHLODSupportLibrary_DestroyInHLOD;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

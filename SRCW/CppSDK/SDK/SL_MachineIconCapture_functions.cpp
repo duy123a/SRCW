@@ -14,8 +14,7 @@
 #include "SL_MachineIconCapture_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SL_MachineIconCapture.SL_MachineIconCapture_C.Capture
 // (Event, Public, BlueprintEvent)
@@ -104,5 +103,5 @@ void ASL_MachineIconCapture_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

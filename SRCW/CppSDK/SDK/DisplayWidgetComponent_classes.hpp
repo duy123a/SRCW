@@ -13,8 +13,7 @@
 #include "UnionSystem_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DisplayWidgetComponent.DisplayWidgetComponent_C
 // 0x0000 (0x0690 - 0x0690)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDisplayWidgetComponent_C;
 
-}
-
+SDK_NAMESPACE_END

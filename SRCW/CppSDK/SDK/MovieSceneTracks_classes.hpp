@@ -21,8 +21,7 @@
 #include "Constraints_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieSceneTracks.MovieSceneTransformOrigin
 // 0x0000 (0x0000 - 0x0000)
@@ -3802,5 +3801,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneVisibilityTrack;
 
-}
-
+SDK_NAMESPACE_END

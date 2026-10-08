@@ -13,8 +13,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AudioExtensions.AudioPropertiesBindings
 // 0x0050 (0x0078 - 0x0028)
@@ -268,7 +267,7 @@ DUMPER7_ASSERTS_USoundModulatorBase;
 
 // Class AudioExtensions.SoundfieldEndpointSettingsBase
 // 0x0000 (0x0028 - 0x0028)
-class USoundfieldEndpointSettingsBase final : public UObject
+class USoundfieldEndpointSettingsBase : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -288,7 +287,7 @@ DUMPER7_ASSERTS_USoundfieldEndpointSettingsBase;
 
 // Class AudioExtensions.SoundfieldEncodingSettingsBase
 // 0x0000 (0x0028 - 0x0028)
-class USoundfieldEncodingSettingsBase final : public UObject
+class USoundfieldEncodingSettingsBase : public UObject
 {
 public:
 	static class UClass* StaticClass()
@@ -392,5 +391,4 @@ public:
 };
 DUMPER7_ASSERTS_UWaveformTransformationChain;
 
-}
-
+SDK_NAMESPACE_END
