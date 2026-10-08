@@ -9,6 +9,9 @@
 #include "Reflect.h"
 #include "CppSDK/SDK/Engine_classes.hpp"
 
+#include <initializer_list>
+#include <unordered_set>
+
 struct SRCWConfig
 {
     bool Console          = false;
@@ -76,3 +79,12 @@ void Cleanup();
 void __fastcall hk_AActor_ProcessEvent(SDK::AActor* Class, SDK::UFunction* Function, void* Parms);
 typedef void(__fastcall* AActor_ProcessEvent_t)(SDK::AActor* Class, SDK::UFunction* Function, void* Parms);
 inline AActor_ProcessEvent_t Orig_AActor_ProcessEvent;
+
+enum class EItemType
+{
+    Gadget,
+    Sticker,
+    Horn,
+    Title
+};
+void UnlockItems(EItemType type, std::initializer_list<int> ids);

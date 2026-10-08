@@ -258,7 +258,19 @@ void Clear()
 bool RunUnlockPhase(int phase)
 {
     switch (phase) {
-    case 0:  { if (cfg.HonorTitles) { for (int i = 0; i < 500; i++) Reflect::CallStaticInt32("AppSaveGameHelper", "UnlockHonorTitle", i); std::cout << "[Phase 0] Honor titles\n"; } return true; }
+    case 0: {
+        if (cfg.HonorTitles) {
+            for (int i = 0; i < 500; i++) Reflect::CallStaticInt32("AppSaveGameHelper", "UnlockHonorTitle", i);
+
+            UnlockItems(EItemType::Gadget, { 96 });
+            UnlockItems(EItemType::Sticker, { 21600, 21601, 21602, 21603, 21604, 21605 });
+            UnlockItems(EItemType::Horn, { 48 });
+            UnlockItems(EItemType::Title, { 1564, 1565, 1566 });
+
+            std::cout << "[Phase 0] Honor titles\n";
+        }
+        return true;
+    }
     case 1:  { if (cfg.Drivers) { int n = Reflect::GetEnumNum("EDriverId"); for (int i = 0; i < n; i++) { Reflect::CallStaticUInt8("AppSaveGameHelper", "SetDriverSelectable", (uint8_t)i); Reflect::CallStaticUInt8("AppSaveGameHelper", "ClearDriverNew", (uint8_t)i); } std::cout << "[Phase 1] Drivers (" << n << ")\n"; } return true; }
     case 2:  { if (cfg.MachineCustomize) { Reflect::CallStatic("MachineCustomizeUtilityLibrary", "StoreAllAura"); Reflect::CallStatic("MachineCustomizeUtilityLibrary", "StoreAllHorn"); Reflect::CallStatic("MachineCustomizeUtilityLibrary", "StoreAllMachineAssembly"); Reflect::CallStatic("MachineCustomizeUtilityLibrary", "StoreAllMachineParts"); Reflect::CallStatic("MachineCustomizeUtilityLibrary", "StoreAllSticker"); Reflect::CallStatic("MachineCustomizeUtilityLibrary", "UnlockGadgetAll"); std::cout << "[Phase 2] Machine customize\n"; } return true; }
     case 3:  { if (cfg.ColorPresets) { int n = Reflect::GetEnumNum("EMachineId"); for (int i = 0; i < n; i++) Reflect::CallStaticUInt8("MachineCustomizeUtilityLibrary", "UnlockMachinePresetColor", (uint8_t)i); std::cout << "[Phase 3] Color presets\n"; } return true; }
@@ -347,4 +359,38 @@ void __fastcall hk_AActor_ProcessEvent(SDK::AActor* Class, SDK::UFunction* Funct
 
     // ===== CALL ORIGINAL =====
     Orig_AActor_ProcessEvent(Class, Function, Parms);
+}
+
+void UnlockItems(EItemType type, std::initializer_list<int> ids)
+{
+    std::unordered_set<int> uniqueIds(ids.begin(), ids.end());
+
+    switch (type)
+    {
+    case EItemType::Gadget:
+        for (int id : uniqueIds)
+            Reflect::CallStaticUInt8("MachineCustomizeUtilityLibrary", "GiveGadget", static_cast<uint8_t>(id));
+        break;
+
+    case EItemType::Sticker:
+        for (int id : uniqueIds)
+            Reflect::CallStaticInt32("MachineCustomizeUtilityLibrary", "GiveSticker", id);
+        break;
+
+    case EItemType::Horn:
+        for (int id : uniqueIds)
+        {
+            Reflect::CallStaticUInt8Bool("MachineCustomizeUtilityLibrary", "SetCustomMachineHornLockType", static_cast<uint8_t>(id), false);
+            Reflect::CallStaticUInt8Bool("MachineCustomizeUtilityLibrary", "SetCustomMachineHornNew", static_cast<uint8_t>(id), true);
+        }
+        break;
+
+    case EItemType::Title:
+        for (int id : uniqueIds)
+            Reflect::CallStaticInt32("AppSaveGameHelper", "UnlockHonorTitle", id);
+        break;
+
+    default:
+        break;
+    }
 }
